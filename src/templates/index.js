@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
-// import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 // import { GatsbySeo } from 'gatsby-plugin-next-seo';
 // import Moment from 'moment';
 
@@ -56,11 +56,11 @@ const BlogIndex = ({ data, location, pageContext }) => {
               <div className="grid grid-cols-1 sm:grid-rows-1">
                 <div className="sm:flex shadow-md hover:shadow-lg border border-gray-100 p-3 rounded-xl mt-3 mx-4 sm:mx-2">
                   <div className="sm:w-96 sm:my-auto">
-                    {/* <GatsbyImage
+                    <GatsbyImage
                     className="object-cover w-full rounded-lg"
                     image={image}
                     alt={title}
-                  /> */}
+                  />
                   </div>
                     
                   
