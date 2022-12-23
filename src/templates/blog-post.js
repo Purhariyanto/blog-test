@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { BlogPostJsonLd, GatsbySeo } from "gatsby-plugin-next-seo"
-// import AdsBot from "../components/ads-bot"
+import AdsBot from "../components/ads-bot"
 
 const BlogPostTemplate = ({
   data: { previous, next, site, markdownRemark: post, allMarkdownRemark: p },
@@ -80,7 +80,7 @@ const BlogPostTemplate = ({
           itemProp="articleBody"
         />
       </article>
-      {/* <AdsBot /> */}
+      <AdsBot />
       <hr />
       <div className="flex flex-row p-3 my-2 rounded-xl">
         {previous && (

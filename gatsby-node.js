@@ -1,42 +1,39 @@
 const path = require(`path`)
-const {
-  createFilePath,
-  createRemoteFileNode,
-} = require(`gatsby-source-filesystem`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 const _ = require("lodash")
 
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  // const tagTemplate = path.resolve("./src/templates/tags.js")
+  const tagTemplate = path.resolve("./src/templates/tags.js")
 
-  // const result1 = await graphql(`
-  //   {
-  //     allMarkdownRemark(limit: 2000) {
-  //       group(field: { frontmatter: { tags: SELECT }}) {
-  //         fieldValue
-  //       }
-  //     }
-  //   }
-  // `)
+  const result1 = await graphql(`
+    {
+      allMarkdownRemark(limit: 2000) {
+        group(field: { frontmatter: { tags: SELECT }}) {
+          fieldValue
+        }
+      }
+    }
+  `)
 
-  // if (result1.errors) {
-  //   reporter.panicOnBuild(`Error while running GraphQL query.`)
-  //   return
-  // }
+  if (result1.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
 
-  // const tags = result1.data.allMarkdownRemark.group
+  const tags = result1.data.allMarkdownRemark.group
 
-  // tags.forEach(tag => {
-  //   createPage({
-  //     path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
-  //     component: tagTemplate,
-  //     context: {
-  //       tag: tag.fieldValue,
-  //     },
-  //   })
-  // })
+  tags.forEach(tag => {
+    createPage({
+      path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: tagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
+    })
+  })
 
   const result = await graphql(`
     {
