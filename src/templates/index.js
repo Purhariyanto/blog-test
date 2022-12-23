@@ -2,15 +2,14 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import { GatsbyImage } from "gatsby-plugin-image"
-// import { GatsbySeo } from 'gatsby-plugin-next-seo';
-// import Moment from 'moment';
+import { GatsbySeo } from 'gatsby-plugin-next-seo';
 
 const BlogIndex = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title
   const siteDes = data.site.siteMetadata?.description
-  // const siteUrl = data.site.siteMetadata?.siteUrl
-  // const author = data.site.siteMetadata?.author
-  // const imgLogo = data.site.siteMetadata?.imgLogo
+  const siteUrl = data.site.siteMetadata?.siteUrl
+  const author = data.site.siteMetadata?.author
+  const imgLogo = data.site.siteMetadata?.imgLogo
   const { currentPage, numPage } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPage
@@ -21,7 +20,7 @@ const BlogIndex = ({ data, location, pageContext }) => {
 
   return (
     <Layout location={location} title={siteTitle} des={siteDes}>
-     {/* <GatsbySeo
+     <GatsbySeo
       title={siteTitle}
       description={siteDes}
       canonical={siteUrl}
@@ -39,11 +38,10 @@ const BlogIndex = ({ data, location, pageContext }) => {
         ],
         site_name: author,
       }}
-    /> */}
+    />
 
       {posts.map(post => {
         const { title, date, img } = post.frontmatter
-        // const d = Moment(date).format('DD MMMM YYYY')
         const image = img.childImageSharp.gatsbyImageData
         return (
           <section
