@@ -1,7 +1,9 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+title: This is my first post on my new fake blog! How exciting!
+date: "2021-05-01T22:12:03.284Z"
+description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+img: ./1.jpg
+tags: [Android,Linux,Windows]
 ---
 
 This is my first post on my new fake blog! How exciting!
@@ -10,6 +12,7 @@ I'm sure I'll write a lot more interesting things in the future.
 
 Oh, and here's a great quote from this Wikipedia on
 [salted duck eggs](https://en.wikipedia.org/wiki/Salted_duck_egg).
+![test](./1.jpg "ok")
 
 > A salted duck egg is a Chinese preserved food product made by soaking duck
 > eggs in brine, or packing each egg in damp, salted charcoal. In Asian
@@ -19,7 +22,6 @@ Oh, and here's a great quote from this Wikipedia on
 > salted duck eggs have a briny aroma, a gelatin-like egg white and a
 > firm-textured, round yolk that is bright orange-red in color.
 
-![Chinese Salty Egg](./salty_egg.jpg)
 
 You can also write code blocks here!
 
@@ -39,7 +41,6 @@ This is a paragraph.
 
     This is a paragraph.
 
-# Header 1
 
 ## Header 2
 
@@ -49,15 +50,7 @@ This is a paragraph.
     Header 2
     --------
 
-# Header 1
-
 ## Header 2
-
-### Header 3
-
-#### Header 4
-
-##### Header 5
 
 ###### Header 6
 
@@ -68,28 +61,6 @@ This is a paragraph.
     ##### Header 5
     ###### Header 6
 
-# Header 1
-
-## Header 2
-
-### Header 3
-
-#### Header 4
-
-##### Header 5
-
-###### Header 6
-
-    # Header 1 #
-    ## Header 2 ##
-    ### Header 3 ###
-    #### Header 4 ####
-    ##### Header 5 #####
-    ###### Header 6 ######
-
-> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
-
-    > Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus. Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
 
 > ## This is a header.
 >
@@ -145,6 +116,8 @@ This is a paragraph.
 1. Buy flour and salt
 1. Mix together with water
 1. Bake
+    2. Don't Bake
+
 
 ```markdown
 1. Buy flour and salt
@@ -226,6 +199,3 @@ This paragraph has some `code` in it.
 
     This paragraph has some `code` in it.
 
-![Alt Text](https://via.placeholder.com/200x50 "Image Title")
-
-    ![Alt Text](https://via.placeholder.com/200x50 "Image Title")

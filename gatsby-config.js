@@ -1,24 +1,11 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
-    },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    title: `WapPur`,
+    description: `WapPur adalah blog yang membahas tentang kumpulan tutorial terupdate. WapPur menyajikan berbagai tutorial menarik yang dilengkapi dengan gambar.`,
+    siteUrl: `https://s.wappur.my.id`,
+    author: `WapPur`,
+    imgLogo: `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPPVVmtvrZTeAv3BV0bxiE9c4rvA152HRF-KlobJKMMNyAIFNodcThulUCqMcUdDWYjnj5KSch8N0krj9VGGG4ApH3cL0Mmf-IoKpLiR7bZ9HS62nISaFzicDHrltNLdqIAzp_vxGg3k3PkKOW914KghsF0Ahi9KieXfKIL25G8t1-Pm87Iyv9xp3R6g/s1600/wappur.png`
   },
   plugins: [
     'gatsby-plugin-postcss',
