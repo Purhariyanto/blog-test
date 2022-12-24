@@ -1,12 +1,15 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/
- */
+const React = require('react')
 
-/**
- * @type {import('gatsby').GatsbySSR['onRenderBody']}
- */
-exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `en` })
+const HeadComponents = [
+  <script
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5738026098468973"
+    crossOrigin="anonymous"
+    async
+    key="google-adsense-script"
+  />
+]
+
+exports.onRenderBody = ({ setHtmlAttributes, setHeadComponents }) => {
+  setHtmlAttributes({ lang: `id` })
+  setHeadComponents(HeadComponents)
 }
