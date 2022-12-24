@@ -37,7 +37,6 @@ const Layout = ({ location, title, des, children }) => {
       className="max-w-2xl mx-auto bg-white shadow-sm"
       data-is-root-path={isRootPath}
     >
-      {/* <Adsense /> */}
       <header className="pt-4">{header}</header>
       <main>{children}</main>
       <hr className="mt-5 mx-auto w-48 h-1 bg-gray-100 rounded border-0" />

@@ -8,9 +8,12 @@ module.exports = {
     imgLogo: `https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgPPVVmtvrZTeAv3BV0bxiE9c4rvA152HRF-KlobJKMMNyAIFNodcThulUCqMcUdDWYjnj5KSch8N0krj9VGGG4ApH3cL0Mmf-IoKpLiR7bZ9HS62nISaFzicDHrltNLdqIAzp_vxGg3k3PkKOW914KghsF0Ahi9KieXfKIL25G8t1-Pm87Iyv9xp3R6g/s1600/wappur.png`
   },
   plugins: [
-    'gatsby-plugin-next-seo',
-    'gatsby-plugin-postcss',
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-next-seo`,
+    `gatsby-plugin-minify-html`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -32,7 +35,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 630,
+              maxWidth: 330,
             },
           },
           {
@@ -45,8 +48,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-feed`,
       options: {

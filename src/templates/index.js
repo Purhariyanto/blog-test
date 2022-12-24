@@ -2,7 +2,7 @@ import * as React from "react"
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { GatsbySeo } from 'gatsby-plugin-next-seo';
+import { GatsbySeo } from "gatsby-plugin-next-seo"
 
 const BlogIndex = ({ data, location, pageContext }) => {
   const siteTitle = data.site.siteMetadata?.title
@@ -20,25 +20,25 @@ const BlogIndex = ({ data, location, pageContext }) => {
 
   return (
     <Layout location={location} title={siteTitle} des={siteDes}>
-     <GatsbySeo
-      title={siteTitle}
-      description={siteDes}
-      canonical={siteUrl}
-      openGraph={{
-        url: siteUrl,
-        title: siteTitle,
-        description: siteDes,
-        images: [
-          {
-            url: imgLogo,
-            width: 500,
-            height: 500,
-            alt: 'WapPur',
-          }
-        ],
-        site_name: author,
-      }}
-    />
+      <GatsbySeo
+        title={siteTitle}
+        description={siteDes}
+        canonical={siteUrl}
+        openGraph={{
+          url: siteUrl,
+          title: siteTitle,
+          description: siteDes,
+          images: [
+            {
+              url: imgLogo,
+              width: 500,
+              height: 500,
+              alt: "WapPur",
+            },
+          ],
+          site_name: author,
+        }}
+      />
 
       {posts.map(post => {
         const { title, date, img } = post.frontmatter
@@ -55,13 +55,12 @@ const BlogIndex = ({ data, location, pageContext }) => {
                 <div className="sm:flex shadow-md hover:shadow-lg border border-gray-100 p-3 rounded-xl mt-3 mx-4 sm:mx-2">
                   <div className="sm:w-96 sm:my-auto">
                     <GatsbyImage
-                    className="object-cover w-full rounded-lg"
-                    image={image}
-                    alt={title}
-                  />
+                      className="object-cover w-full rounded-lg"
+                      image={image}
+                      alt={title}
+                    />
                   </div>
-                    
-                  
+
                   <div className="flex flex-col justify-between sm:ml-6">
                     <h2 className="mt-4 sm:mt-0">
                       <Link to={post.fields.slug} itemProp="url">
@@ -77,7 +76,7 @@ const BlogIndex = ({ data, location, pageContext }) => {
                       {post.excerpt}
                     </span>
 
-                    <span className="text-sm text-gray-500"> {date}</span>
+                    <span className="text-sm text-gray-500"> <time>{date}</time></span>
                   </div>
                 </div>
               </div>
@@ -86,26 +85,24 @@ const BlogIndex = ({ data, location, pageContext }) => {
         )
       })}
       <div className="flex flex-row p-3 my-2 rounded-xl">
-      {!isFirst && (
-        <div className="flex-1">
-        
-          <Link to={prevPage} rel="prev">
-          <div className="inline-block shadow-lg text-white px-4 py-2 bg-blue-600 rounded-xl text-base font-bold hover:bg-yellow-600">
-            ← Previous
-            </div>
-          </Link>
-          
+        {!isFirst && (
+          <div className="flex-1">
+            <Link to={prevPage} rel="prev">
+              <div className="inline-block shadow-lg text-white px-4 py-2 bg-blue-600 rounded-xl text-base font-bold hover:bg-yellow-600">
+                ← Previous
+              </div>
+            </Link>
           </div>
-      )}
-      {!isLast && (
-        <div className="flex-1">
-          
-          <Link to={nextPage} rel="next">
-          <div className="inline-block shadow-lg text-white px-4 py-2 bg-blue-600 rounded-xl text-base font-bold hover:bg-yellow-600 float-right">Next →</div>
-          </Link>
-        
-        </div>
-      )}
+        )}
+        {!isLast && (
+          <div className="flex-1">
+            <Link to={nextPage} rel="next">
+              <div className="inline-block shadow-lg text-white px-4 py-2 bg-blue-600 rounded-xl text-base font-bold hover:bg-yellow-600 float-right">
+                Next →
+              </div>
+            </Link>
+          </div>
+        )}
       </div>
     </Layout>
   )
@@ -135,16 +132,12 @@ export const pageQuery = graphql`
           slug
         }
         frontmatter {
-          date(formatString: "MMMM DD, YYYY")
+          date(formatString: "DD MMMM YYYY")
           title
           description
           img {
             childImageSharp {
-              gatsbyImageData(
-                width: 600
-                placeholder: BLURRED
-                formats: WEBP
-              )
+              gatsbyImageData(width: 600, placeholder: BLURRED, formats: WEBP)
             }
           }
           tags
